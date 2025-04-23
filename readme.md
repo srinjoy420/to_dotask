@@ -35,3 +35,83 @@ it givies us validation results it also use express
 15 express dont have fil managing
 
 16. file handelig in middleweare create a miulter.js and import multer for file uploading
+
+Frontend Setup with Vite (Step 17 onward)
+17. Initialize Frontend with Vite
+
+bash
+Copy
+Edit
+npm create vite@latest frontend
+Choose the framework (e.g., React)
+
+Name the project: frontend
+
+18. Navigate to the frontend folder and install dependencies
+
+bash
+Copy
+Edit
+cd frontend
+npm install
+19. Setup folder structure inside frontend/src/:
+
+css
+Copy
+Edit
+src/
+├── components/
+│   ├── Login.jsx
+│   ├── Signup.jsx
+│   ├── Profile.jsx
+│   └── Logout.jsx
+├── pages/
+│   └── Home.jsx
+├── services/
+│   └── apiClient.js
+├── App.jsx
+├── main.jsx
+└── index.css
+20. Install React Router
+
+bash
+Copy
+Edit
+npm install react-router-dom
+Set up routing in main.jsx:
+
+jsx
+Copy
+Edit
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+21. Setup API client Create apiClient.js inside services/ for making backend API calls using fetch.
+
+22. Enable Cookies for Auth Install cookie support:
+
+bash
+Copy
+Edit
+npm install js-cookie
+23. Create .env for frontend
+
+bash
+Copy
+Edit
+VITE_API_URL=http://localhost:8000/api/v1
+Access via import.meta.env.VITE_API_URL
+
+24. Set up Authentication
+
+Handle login/signup/logout/profile logic in apiClient.js.
+
+Use useState, useEffect, and useNavigate hooks in components.
+
+
+
+
+26. Run the Frontend
+
+bash
+Copy
+Edit
+npm run dev
