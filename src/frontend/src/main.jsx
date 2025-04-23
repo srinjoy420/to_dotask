@@ -5,6 +5,8 @@ import App from './App.jsx'
 import { BrowserRouter,Routes,Route } from "react-router";
 import Login from './components/Login.jsx';
 import Singup from './components/SingUp.jsx';
+import Getme from './components/getme.jsx';
+
 
 
 
@@ -15,6 +17,9 @@ createRoot(document.getElementById('root')).render(
         <Route path='/' element={<App />} />
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<Singup />} />
+        <Route path='/getme' element={<Getme />} />
+        
+        
       </Routes>
     </BrowserRouter>
   </StrictMode>,

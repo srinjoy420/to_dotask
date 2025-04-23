@@ -49,7 +49,17 @@ class Apiclient {
     }
     //get my profile
     async getprofile(){
-        return this.customFetch("/auth/me")
+        return this.customFetch("/auth/me",{
+            method:"GET",
+            
+
+        })
+    }
+    //logout profile
+    async logout(){
+        return this.customFetch("/auth/logout",{
+            method:"GET",
+        })
     }
 
 }

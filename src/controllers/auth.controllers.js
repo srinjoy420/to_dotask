@@ -348,7 +348,7 @@ const getCurrentUser = asyncHandler(async (req, res) => {
     }
     catch(err){
         res.status(400).json({
-            message:"cant reavh at profile"
+            message:"cant reach at profile"
         })
 
     }

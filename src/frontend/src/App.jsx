@@ -3,11 +3,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Login from './components/Login'
+import Getme from "./components/getme.jsx";
+import { useNavigate } from "react-router";
 
 function App() {
   const [count, setCount] = useState(0)
   //const [value,fn]=useState(default)
   const [name,setName]=useState("chai")
+   const navigate=useNavigate()
 
   return (
     <>
@@ -27,6 +30,8 @@ function App() {
         </button>
         {name}
         <button onClick={()=>setName("code")}>change name</button>
+        <button onClick={() => navigate("/getme")}>My profile</button>
+
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
