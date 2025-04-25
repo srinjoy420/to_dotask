@@ -32,6 +32,7 @@ function App() {
         {name}
         <button onClick={()=>setName("code")}>change name</button>
         <button onClick={() => navigate("/getme")}>My profile</button>
+        <button onClick={() => navigate("/logout")}>My profile</button>
        
 
 
