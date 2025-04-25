@@ -59,19 +59,61 @@ npm install
 css
 Copy
 Edit
-src/
-├── components/
-│   ├── Login.jsx
-│   ├── Signup.jsx
-│   ├── Profile.jsx
-│   └── Logout.jsx
-├── pages/
-│   └── Home.jsx
-├── services/
-│   └── apiClient.js
-├── App.jsx
-├── main.jsx
-└── index.css
+megaproject/
+├── .env
+├── .gitignore
+├── package.json
+├── README.md
+├── app.js
+├── index.js
+├── constants/
+│   └── constants.js
+├── controllers/
+│   ├── auth.controller.js
+│   ├── healthcheck.controller.js
+│   ├── note.controller.js
+│   ├── project.controller.js
+│   └── task.controller.js
+├── db/
+│   └── indexdb.js
+├── middlewares/
+│   ├── auth.middleware.js
+│   ├── multer.middleware.js
+│   └── validator.middleware.js
+├── models/
+│   ├── member.model.js
+│   ├── note.model.js
+│   ├── project.model.js
+│   ├── subtask.model.js
+│   ├── task.model.js
+│   └── user.model.js
+├── routes/
+│   ├── auth.routes.js
+│   ├── healthcheck.routes.js
+│   ├── note.routes.js
+│   ├── project.routes.js
+│   └── task.routes.js
+├── utils/
+│   ├── api-response.js
+│   ├── appError.js
+│   ├── asyncHandler.js
+│   ├── constants.js
+│   └── mail.js
+├── validators/
+│   └── index.validator.js
+└── src/frontend/
+    ├── components/
+    │   ├── Login.jsx
+    │   ├── Logout.jsx
+    │   ├── Profile.jsx
+    │   └── Signup.jsx
+    
+    ├── services/
+    │   └── apiClient.js
+    ├── App.jsx
+    ├── main.jsx
+    └── index.css
+
 20. Install React Router
 
 bash
