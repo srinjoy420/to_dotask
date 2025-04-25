@@ -15,7 +15,8 @@ function App() {
   return (
     <>
       <div>
-        <Login/>
+      <button onClick={() => navigate("/login")}>login</button>
+      <button onClick={() => navigate("/singup")}>singup</button>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -31,6 +32,8 @@ function App() {
         {name}
         <button onClick={()=>setName("code")}>change name</button>
         <button onClick={() => navigate("/getme")}>My profile</button>
+       
+
 
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
