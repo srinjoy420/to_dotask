@@ -37,6 +37,7 @@ function Getme() {
         <li><b>Fullname:</b> {profile?.fullname}</li>
         <li><b>Fullname:</b> {profile?.email}</li>
         <li><b>username:</b> {profile?.usename}</li>
+        <li><b>userid:</b> {profile?._id}</li>
       </ul>
       
     </div>

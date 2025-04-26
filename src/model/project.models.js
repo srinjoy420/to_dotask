@@ -4,11 +4,12 @@ const projectSchema = new Schema({
     name:{
         type:String,
         required:true,
-        unique:true,
+        unique:[true,"name must be unique"],
         trim:true
     },
     deacription:{
         type:String,
+        required:true
         
     },
     createdBy:{
