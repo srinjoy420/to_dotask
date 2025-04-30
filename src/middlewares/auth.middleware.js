@@ -41,3 +41,26 @@ export const isLoggedin = async (req, res, next) => {
     
 
 }
+
+export const isAdmin = async (req, res, next) => {
+    try {
+        const userid=req.user?._id;
+        const role=req.user?.role;
+        if(!userid || role !=="ADMIN"){
+            res.status(400).json({
+                success:false,
+                message:"you are not admin"
+            })
+        }
+        next()
+;
+    } catch (error) {
+        console.log("checkadmin middleware error",error);
+        return res.status(500).json({
+            success:false,
+            message:"internal server error"
+        })
+        
+        
+    }
+}

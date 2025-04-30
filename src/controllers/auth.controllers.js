@@ -5,6 +5,7 @@ import crypto from "crypto";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import { sendmail, emailVerificationMailgenContent } from "../utils/mail.js"
+import {AvalibleUserRoles,UserRolesEnum} from "../utils/constants.js";
 import nodemailer from "nodemailer"
 
 dotenv.config();
@@ -13,7 +14,7 @@ const registerUser = asyncHandler(async (req, res) => {
     //Algorithms
 
     //1 get user data
-    const { email, usename, password, fullname } = req.body;
+    const { email, usename, password, fullname,role } = req.body;
     if (!email || !usename || !password || !fullname) {
         res.status(400).json({ message: "All fields are required" })
     }
@@ -27,7 +28,8 @@ const registerUser = asyncHandler(async (req, res) => {
             fullname,
             usename,
             email,
-            password
+            password,
+            role
         })
         // console.log(user);
         // res.status(201).json({
@@ -119,7 +121,9 @@ const loginUser = asyncHandler(async (req, res) => {
         generateAcessToken,
         user: {
             id: user._id,
-            name: user.usename
+            name: user.usename,
+            email: user.email,
+            role: user.role
         }
 
 

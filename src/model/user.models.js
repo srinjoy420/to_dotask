@@ -2,6 +2,7 @@ import mongoose,{Schema} from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
+import {AvalibleUserRoles,UserRolesEnum} from "../utils/constants.js";
 
 const userschema = new Schema({
     avatar:{
@@ -48,6 +49,12 @@ const userschema = new Schema({
         type:Boolean,
         default:false
     },
+    role:{
+        type:String,
+        enum:AvalibleUserRoles,
+        default:UserRolesEnum.MEMBER
+
+    },
     forgotpasswordtoken:{
         type:String,
        
@@ -90,7 +97,8 @@ userschema.methods.generateAcessToken= function(){
         {
             _id:this._id,
             email:this.email,
-            username:this.usename
+            username:this.usename,
+            role:this.role
         },
         process.env.TOKEN_SECRET,
         {expiresIn:process.env.TOKEN_EXPIRY}

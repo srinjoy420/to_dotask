@@ -51,7 +51,7 @@ const createproject = asyncHandler(async (req, res) => {
 
     }
 })
-const getProjects = async (req, res) => {
+const getProjects = asyncHandler(async (req, res) => {
     const userId = req.user._id;
 
     const allProjects = await Project.find({createdBy:userId});
@@ -60,7 +60,7 @@ const getProjects = async (req, res) => {
     }
 
     return res.status(200).json(new ApiResponse(200,"All project are here.",allProjects));
-};
+});
 const deleteproject=asyncHandler(async(req,res)=>{
     const {name}=req.body;
     const project=await Project.findOne({name});
@@ -75,4 +75,5 @@ const deleteproject=asyncHandler(async(req,res)=>{
 
 
 })
+
 export { createproject,getProjects,deleteproject }
